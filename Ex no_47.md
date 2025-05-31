@@ -1,8 +1,8 @@
-# EX 47 C function to insert a node in a linked list.
+# EX 48 C functions to perform all basic operations in Doubly Linked List.
 
 ## AIM:
 
-To write a C function to insert a node in a linked list.
+To write a C functions to perform all basic operations in Doubly Linked List.
 
 ## Algorithm
 
@@ -10,7 +10,7 @@ Start.
 
 Define a variables.
 
-Write a function to insert a node in a linked list.
+Write a function to search an element in the double linked list..
 
 Read the value using scanf.
 
@@ -22,58 +22,66 @@ End
 
 ## Program:
 
-struct Node{ 
+struct Node
 
-char data;
+{
 
-struct Node *next;
+struct Node *prev; 
+
+struct Node *next; 
+
+int data;
 
 }*head;
 
-void insert(char data)
+void search(int data)
 
 {
 
-struct Node *n=(struct Node*)malloc(sizeof(struct Node)); 
+struct Node *temp;
 
-struct Node*temp;
-
-if(head==NULL)
-
-{
-
-head=n;
-
-n->data=data;
-
-n->next=NULL; 
+int item=data,i=0,flag; 
 
 temp=head; 
 
-return;
-
-}
-
-}
-
-else
+if(temp==NULL)
 
 {
 
-while(temp->next!=NULL)
+printf("Empty list\n");
+
+}
+
+else{
+
+while(temp!=NULL)
 
 {
+
+if(temp->data == item)
+
+{
+
+printf("item %d found at location %d",item,i+1); 
+
+flag=0;
+
+}
+
+i++;
 
 temp=temp->next;
 
 }
 
-n->next=NULL; 
 
+if(flag!=0)
 
-n->data=data; 
+{
 
-temp->next=n;
+printf("Item not found\n");
+
+}
 
 }
 
@@ -82,7 +90,7 @@ temp->next=n;
 
 ## Output:
 
-![Screenshot 2025-05-26 171045](https://github.com/user-attachments/assets/73d05504-4bdc-45a5-b130-7920f0df1a5e)
+![Screenshot 2025-05-26 171252](https://github.com/user-attachments/assets/a153b014-edbc-43fc-b6ae-e31d3ede1434)
 
 
 ## Result:
